@@ -2,7 +2,9 @@
   "name": "cuba-file-field",
   "main": "cuba-file-field.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.7.0"
+    "polymer": "Polymer/polymer#^1.7.0",
+    "cuba-app": "cuba-elements/cuba-app#^0.2.0",
+    "vaadin-upload": "vaadin/vaadin-upload#^1.1.4"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
