@@ -1,3 +1,14 @@
+<!--
+
+Polymer element for uploading files to CUBA application. Once file is uploaded file descriptor object is
+bound to `fileDescriptor` property.
+
+```html
+<cuba-file-field file-descriptor="{{fileDescriptor}}"></cuba-file-field>
+```
+
+-->
+
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../vaadin-upload/vaadin-upload.html">
 <link rel="import" href="../cuba-app/cuba-localize-behavior.html">
@@ -57,10 +68,10 @@
           value: function() {
             return {
               en: {
-                upload: 'Upload'
+                upload: 'Upload file'
               },
               ru: {
-                upload: 'Загрузить'
+                upload: 'Загрузить фаил'
               }
             }
           }
@@ -109,7 +120,11 @@
       },
 
       _handleLabelChange: function() {
-        this.$.vaadinUpload.i18n.addFiles.one = this.msg('upload') + ' ' + this.label;
+        var caption = this.msg('upload');
+        if (this.label) {
+          caption += '(' + this.label + ')';
+        }
+        this.$.vaadinUpload.i18n.addFiles.one = caption;
         this.$.vaadinUpload.notifyPath('i18n.addFiles.one');
       },
 
