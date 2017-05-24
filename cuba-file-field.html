@@ -7,6 +7,8 @@ bound to `fileDescriptor` property.
 <cuba-file-field file-descriptor="{{fileDescriptor}}"></cuba-file-field>
 ```
 
+The element wraps `vaadin-upload` component.
+
 -->
 
 <link rel="import" href="../polymer/polymer.html">
@@ -49,16 +51,27 @@ bound to `fileDescriptor` property.
       behaviors: [CubaAppAwareBehavior],
 
       properties: {
-
+        /**
+         * Label to be shown on the upload button.
+         */
         label: {
           type: String
         },
 
+        /**
+         * File descriptor object.
+         */
         fileDescriptor: {
           type: Object,
           notify: true
         },
 
+
+        /**
+         * The array of files being processed, or already uploaded. Bound to the corresponding property of
+         * `vaadin-upload`.
+         * Currently only single file is supported.
+         */
         files: {
           type: Array,
           notify: true
@@ -126,6 +139,13 @@ bound to `fileDescriptor` property.
           return window.open(url, '_blank');
         }
       }
-    })
+    });
+    /**
+     * Fired when a file has been successfully uploaded:
+     *  file-size, file-type or maxFiles
+     *
+     * @event cuba-upload-success
+     * @param {Object} detail response from the server
+     */
   </script>
 </dom-module>
