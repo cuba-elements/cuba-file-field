@@ -36,7 +36,7 @@ The element wraps `vaadin-upload` component.
                    target="[[app.apiUrl]]v2/files"
                    headers="[[_computeHeaders(app, app.restApiToken)]]"
                    files="{{files}}">
-      <div class="file-list">
+      <div slot="file-list">
         <template is="dom-repeat" items="[[files]]" as="file">
           <vaadin-upload-file file="[[file]]" on-tap="_handleFileClick"></vaadin-upload-file>
         </template>
