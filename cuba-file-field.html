@@ -35,10 +35,12 @@ The element wraps `vaadin-upload` component.
                    max-files="1"
                    target="[[app.apiUrl]]v2/files"
                    headers="[[_computeHeaders(app, app.restApiToken)]]"
-                   files="{{files}}">
+                   files="{{files}}"
+                   on-file-remove="_handleFileRemove"
+                   on-upload-success="_handleUploadSuccess">
       <div slot="file-list">
         <template is="dom-repeat" items="[[files]]" as="file">
-          <vaadin-upload-file file="[[file]]" on-tap="_handleFileClick"></vaadin-upload-file>
+          <vaadin-upload-file file="[[file]]" on-click="_handleFileClick"></vaadin-upload-file>
         </template>
       </div>
     </vaadin-upload>
@@ -82,11 +84,6 @@ The element wraps `vaadin-upload` component.
         '_handleFdChange(fileDescriptor)',
         '_handleLabelChange(label)'
       ],
-
-      listeners: {
-        'vaadinUpload.file-remove': '_handleFileRemove',
-        'vaadinUpload.upload-success': '_handleUploadSuccess'
-      },
 
       _computeHeaders: function() {
         if (this.app.restApiToken) {
