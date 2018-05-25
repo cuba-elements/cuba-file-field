@@ -1,0 +1,20 @@
+{
+  "name": "cuba-file-field",
+  "version": "1.0.0",
+  "description": "Polymer element for uploading files to CUBA application. Once file is uploaded file descriptor object is  bound to `fileDescriptor` property.",
+  "scripts": {
+    "gen-tsd": "gen-typescript-declarations --deleteExisting --outDir ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuba-elements/cuba-file-field.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cuba-elements/cuba-file-field/issues"
+  },
+  "homepage": "https://github.com/cuba-elements/cuba-file-field#readme",
+  "devDependencies": {
+    "@polymer/gen-typescript-declarations": "^1.2.2"
+  }
+}
