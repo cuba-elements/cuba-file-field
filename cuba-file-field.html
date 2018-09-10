@@ -3,6 +3,8 @@
 Polymer element for uploading files to CUBA application. Once file is uploaded file descriptor object is
 bound to `fileDescriptor` property.
 
+This component uses `vaadin-upload` but does not import it. You should import `vaadin-upload` manually.
+
 ```html
 <cuba-file-field file-descriptor="{{fileDescriptor}}"></cuba-file-field>
 ```
@@ -12,7 +14,6 @@ The element wraps `vaadin-upload` component.
 -->
 
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../vaadin-upload/vaadin-upload.html">
 <link rel="import" href="../cuba-app/cuba-app-aware-behavior.html">
 
 <dom-module id="cuba-file-field">
